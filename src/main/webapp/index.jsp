@@ -2,11 +2,13 @@
 <%@page import="com.leandropap.sourcePackage.Mensaje" %>
 <%@page import="java.util.*" %>
 
-
+<!DOCTYPE html>
 <html>
 
 <head>
-<script src="https://cdn.tailwindcss.com"></script>
+	<meta charset="ISO-8859-1">
+	<title>MessageApp - JSP</title>
+	<script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
@@ -73,11 +75,19 @@
 					<hr />
 					<cite><%=mensaje.getFecha()%></cite>
 				</div>
-				<button class="text-blue-500 hover:font-medium">Editar</button>
-				<button class="text-blue-500 hover:font-medium">Eliminar</button>
+				<a href="edit.jsp?id=<%=mensaje.getId()%>
+					&&msg=<%=mensaje.getMensaje()%>
+					&&from=<%=mensaje.getAutor()%>
+					&&to=<%=mensaje.getDestinatario()%>"
+					class="text-blue-500 hover:font-medium">
+					Editar</a>
+				<a href="delete.jsp?id=<%=mensaje.getId()%>"
+					class="text-blue-500 hover:font-medium">
+					Eliminar</a>
 			</div>
 		<%}%>
 		
 		</div>
 	</div>
 </body>
+</html>
